@@ -1,32 +1,16 @@
 <?php
-class Database {
-    private $host = 'localhost';
-    private $user = 'root';
-    private $password = '';
-    private $database = 'gimnasio';
-    private static $conn = null;
+$host = 'localhost';
+$dbname = 'gimnasio';
+$user = 'root';
+$pass = '';
 
-    public static function Connect() {
-        if (self::$conn != null) {
-            try {
-                // self::$conn = new PDO("mysql:host=$this->host;dbname=$this->database", $this->user, $this->password);
-                // self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
-                // self::$conn = new PDO("mysql:host=". self::$host . ";dbname=" . self::$database, self::$user, self::$password [
-                //     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                //     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                // ]);
-                self::$conn = new PDO(
-                    "mysql:host=" . self::$host . ";dbname=" . self::$database, 
-                    self::$user, 
-                    self::$password
-                );
-                self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                self::$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            } catch (PDOException $e) {
-                die('Connection failed: ' . $e->getMessage());
-            }
-        }
-        return self::$conn;
-    }
+try {
+    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+    $pdo = new PDO($dsn, $user, $pass);
+    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec("SET NAMES 'utf8mb4'");
+    // echo "Conexión exitosa!";
+} catch (PDOException $e) {
+    echo "Error al conectar a la base de datos: " . $e->getMessage();
 }
