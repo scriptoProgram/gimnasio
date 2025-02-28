@@ -1,7 +1,11 @@
 <?php 
-    require_once './../src/controllers/authController.php'; 
+    // require_once './../src/controllers/authController.php'; 
+
+    session_start();
+    $error = "";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        require_once realpath(__DIR__ . '/../src/controllers/AuthController.php');
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -47,7 +51,10 @@
                 <button class='btn btn_success' type="submit" id="btnLogin">Iniciar sesión</button>
             </div>
         </form>
+        <?php if (!empty($error)): ?>
+            <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
     </div>
-    <?php if (isset($error)) echo "<p>$error</p>"; ?>
+    <!-- < ?php if (isset($error)) echo "<p>$error</p>"; ?> -->
 </body>
 </html>
