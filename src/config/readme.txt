@@ -1,1 +1,0 @@
-USO: configuración, por ejemplo, conexión a la base de datos
