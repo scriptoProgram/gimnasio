@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once realpath(__DIR__ . './../config/database_manual.php');
+require_once(__DIR__ . './../config/database_manual.php');
 // require_once realpath(__DIR__ . './../config/database_auto.php');
 
 class UserModel {
