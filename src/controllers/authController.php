@@ -11,7 +11,7 @@
             if ($user && password_verify($password, $user['pass'])) {
                 $token = bin2hex(random_bytes(32));
                 SessionHelper::startSession($user['id'], $user['tipo'], $token);
-                header("Location: /public/dashboard.php");
+                header("Location: /gimnasio/views/dashboard.php");
                 exit();
             } else {
                 return "Correo o contraseña incorrectos.";
@@ -32,7 +32,7 @@
             // sessionHelper::logout();
             // header('Location: /login');
             SessionHelper::destroySession();
-            header("Location: /public/index.php");
+            header("Location: /gimnasio/public/index.php");
             exit();
         }
     }

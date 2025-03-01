@@ -1,11 +1,12 @@
 <?php
+    session_start();
     require_once './../src/helpers/sessionHelper.php';
 
     if (!SessionHelper::isAuthenticated()) {
-        header("Location: /public/index.php");
+        header("Location: /gimnasio/public/index.php");
         exit();
     }
-
     echo "Bienvenido, " . $_SESSION['us_id'] . " (ID: " . $_SESSION['us_id'] . ")";
+
 ?>
-<a href="/public/logout.php">Cerrar sesión</a>
+<a href="/gimnasio/public/logout.php">Cerrar sesión</a>

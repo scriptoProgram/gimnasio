@@ -5,7 +5,7 @@ require_once './../config/database_auto.php';
 $emp = DB::connectAndPrepare("SELECT * FROM empleado");
 $emp->execute();
 $empleados = $emp->fetchAll(PDO::FETCH_ASSOC);
-var_dump($empleados);
+// var_dump($empleados);
 
 foreach ($empleados AS $empleado) {
     // var_dump($empleado);
