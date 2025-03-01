@@ -18,10 +18,7 @@
     <meta charset="UTF-8">    
     <title>Login -Gimnasio</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- <link rel="stylesheet" href="./../public/css/login.css"> -->
-    <!-- <link rel="stylesheet" href="< ? echo URL_STYLE; ?>/login.css"> -->
     <link rel="stylesheet" href="<?php echo URL_BASE; ?>css/login.css">
-    <!-- <link rel="stylesheet" href="./../public/css/test.css"> -->
 </head>
 <body>
     <div class="background"></div>

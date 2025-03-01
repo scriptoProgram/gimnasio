@@ -32,7 +32,7 @@
             // sessionHelper::logout();
             // header('Location: /login');
             SessionHelper::destroySession();
-            header("Location: /gimnasio/public/index.php");
+            header("Location: /gimnasio");
             exit();
         }
     }
