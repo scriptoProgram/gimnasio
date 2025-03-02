@@ -14,7 +14,10 @@
                 header("Location: /gimnasio/views/dashboard.php");
                 exit();
             } else {
-                return "Correo o contraseña incorrectos.";
+                // return "Correo o contraseña incorrectos.";
+                $_SESSION['login_error'] = "Correo o contraseña incorrectos.";
+                header("Location: /gimnasio");
+                exit();
             }
             // if ($user) {
             //     if (password_verify($password, $user['pass'])) {

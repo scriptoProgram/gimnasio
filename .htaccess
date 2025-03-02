@@ -8,3 +8,29 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ public/$1 [L]
 
+# RewriteEngine On
+
+# # Redirige automáticamente a la carpeta public
+# RewriteRule ^$ public/ [L]
+
+# # Redirige todas las solicitudes no existentes a public/index.php
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+# # Bloquear acceso directo a archivos sensibles
+# <FilesMatch "\.(env|ini|log|sql|bak|sh|config|json|xml|yml)$">
+#     Order Allow,Deny
+#     Deny from all
+# </FilesMatch>
+
+# # Evita la ejecución de scripts PHP en directorios sensibles
+# <DirectoryMatch "/(config|helpers|models)/">
+#     <FilesMatch "\.php$">
+#         Order Allow,Deny
+#         Deny from all
+#     </FilesMatch>
+# </DirectoryMatch>
+
+# # Deshabilitar listado de directorios
+# Options -Indexes
