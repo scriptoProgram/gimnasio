@@ -4,6 +4,11 @@ session_start();
 require_once __DIR__ . '/../src/config/url_config.php';
 $error = "";
 
+if (isset($_SESSION['us_id'])) {
+    header("Location: views/main.php");
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once realpath(__DIR__ . '/../src/controllers/AuthController.php');
     $email = $_POST['email'];
