@@ -19,16 +19,6 @@
                 header("Location: /gimnasio");
                 exit();
             }
-            // if ($user) {
-            //     if (password_verify($password, $user['pass'])) {
-            //         sessionHelper::login($user['id'], $user['tipo']);
-            //         header('Location: /');
-            //     } else {
-            //         header('Location: /login?error=invalid_credentials');
-            //     }
-            // } else {
-            //     header('Location: /login?error=invalid_credentials');
-            // }
         }
 
         public static function logout() {
