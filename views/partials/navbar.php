@@ -1,17 +1,13 @@
 <?php
-
+session_start();
 function renderNavbar($role) {
-    echo "<nav>";
+    echo "<script src='https://unpkg.com/@tailwindcss/browser@4'></script>";
+    echo '<nav class="bg-[#101828] absolute left-0 w-[11rem] h-full">';
+    // echo '<div class="bg-[#50d71e]">';
     echo "<ul>";
-
-    if ($role === 'ADMIN') {
-        echo "<li><a href='/admin'>Panel de Admin</a></li>";
-    } elseif ($role === 'TRAINER') {
-        echo "<li><a href='/trainer'>Panel de Entrenador</a></li>";
-    } else {
-        echo "<li><a href='/'>Inicio</a></li>";
-    }
+        echo "<li><a class='text-gray-400' href='main.php'> Inicio</a></li>";
 
     echo "</ul>";
     echo "</nav>";
+    // echo "</div>";
 }
