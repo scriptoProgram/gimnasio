@@ -9,4 +9,4 @@
     echo "Bienvenido, " . $_SESSION['us_id'] . " (ID: " . $_SESSION['us_id'] . ")";
 
 ?>
-<a href="/gimnasio/public/logout.php">Cerrar sesión</a>
+<a href="/gimnasio/src/public/logout.php">Cerrar sesión</a>
