@@ -3,7 +3,7 @@
     require_once './../src/helpers/sessionHelper.php';
 
     if (!SessionHelper::isAuthenticated()) {
-        header("Location: /gimnasio/public/index.php");
+        header("Location: /gimnasio/");
         exit();
     }
     echo "Bienvenido, " . $_SESSION['us_id'] . " (ID: " . $_SESSION['us_id'] . ")";

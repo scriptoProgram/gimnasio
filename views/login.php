@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once './../src/config/url_config.php';
+// require_once '../src/config/url_config.php';
+require_once __DIR__ . '/../src/config/url_config.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -57,11 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } 
         ?>
         <?php if (isset($_SESSION['login_error'])): ?>
-            <div class="alert alert-danger">
-                <?php
-                echo $_SESSION['login_error'];
-                unset($_SESSION['login_error']); // Elimina el mensaje al mostrarlo
-                ?>
+            <div>
+                <p class="text-red-500">
+                    <?php
+                    echo $_SESSION['login_error'];
+                    unset($_SESSION['login_error']); // Elimina el mensaje al mostrarlo
+                    ?>
+                </p>
             </div>
         <?php endif; ?>
 

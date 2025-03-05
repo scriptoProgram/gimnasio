@@ -1,12 +1,13 @@
 RewriteEngine On
 
 # Redirige automáticamente a la carpeta public
-RewriteRule ^$ public/ [L]
+# RewriteRule ^$ public/ [L]
+RewriteRule ^$ src/public/ [L]
 
 # Opcional: Redirige cualquier solicitud no existente a public/index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule ^(.*)$ src/public/$1 [L]
 
 # RewriteEngine On
 

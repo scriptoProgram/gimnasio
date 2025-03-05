@@ -1,0 +1,27 @@
+📂 Estructura del Proyecto
+📁 public/ → Contiene los archivos accesibles públicamente.
+
+css/ → Hojas de estilo para el frontend.
+images/ → Imágenes del sitio.
+js/ → Archivos JavaScript.
+index.php → Probablemente el punto de entrada de la aplicación.
+logout.php → Archivo para cerrar sesión.
+📁 src/ → Código fuente y lógica del backend.
+
+📁 config/ → (No visible, pero sería ideal tener un archivo config.php aquí para la configuración del proyecto).
+📁 controllers/ → Controladores que manejan la lógica de la aplicación.
+authController.php → Maneja la autenticación de usuarios.
+siteController.php → Probablemente maneja páginas generales del sitio.
+📁 helpers/ → Funciones de ayuda reutilizables.
+sessionHelper.php → Posiblemente maneja sesiones.
+📁 models/ → Modelos de la base de datos.
+test.php → Parece un archivo de prueba, podría ser eliminado si no es necesario.
+userModel.php → Maneja la lógica relacionada con los usuarios en la base de datos.
+router.php → Probablemente define las rutas de la aplicación.
+📁 views/ → Contiene las vistas que se renderizan en el frontend.
+
+📁 partials/ → Fragmentos de vistas reutilizables como headers o footers.
+dashboard.php → Interfaz del usuario después de iniciar sesión.
+login.php → Página de inicio de sesión.
+main.php → Página principal del sitio.
+.htaccess → Archivo de configuración para el servidor Apache, posiblemente maneja redirecciones y URLs amigables.
