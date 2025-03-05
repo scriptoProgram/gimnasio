@@ -1,15 +1,18 @@
 <?php
-require_once '../helpers/UserSession.php';
+require_once __DIR__ . '/../helpers/userSession.php';
 
 class SiteController {
-    private $userRole;
+    // private $userRole;
 
-    public function __construct() {
-        $this->userRole = UserSession::getUserRole();
-    }
+    // public function __construct() {
+    //     $this->userRole = UserSession::getUserRole();
+    // }
 
-    public function addNavbar() {
-        require_once '../../views/partials/navbar.php';
-        renderNavbar($this->userRole);
+    public static function addNavbar() {
+        $userRole =UserSession::getUserRole();
+        require_once __DIR__ . '/../../views/partials/navbar.php';
+        // renderNavbar($this->userRole);
+        renderNavbar($userRole);
     }
 }
+// $siteController = new SiteController();
