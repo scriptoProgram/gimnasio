@@ -19,8 +19,18 @@
             session_start();
             session_unset();
             session_destroy();
-            setcookie("us_id", "", time() - 3600, "/");
-            setcookie("us_type", "", time() - 3600, "/");
-            setcookie("us_token", "", time() - 3600, "/");
+
+            if (isset($_COOKIE['us_id'])) {
+                setcookie("us_id", "", time() - 3600, "/", "", true, true);
+            }
+            if (isset($_COOKIE['us_type'])) {
+                setcookie("us_type", "", time() - 3600, "/", "", true, true);
+            }
+            if (isset($_COOKIE['us_token'])) {
+                setcookie("us_token", "", time() - 3600, "/", "", true, true);
+            }
+            // setcookie("us_id", "", time() - 3600, "/");
+            // setcookie("us_type", "", time() - 3600, "/");
+            // setcookie("us_token", "", time() - 3600, "/");
         }
     }
