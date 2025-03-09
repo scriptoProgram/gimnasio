@@ -6,3 +6,17 @@ a:hover {
     background-color: #c1001752;
     border-radius: 15px;
 }
+#navbar {
+    font-size: 15px;
+}
+/* hr {
+    border: 1px solid #CECECE;
+    margin: 10px 0;
+} */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #7D7D7D; /* Un gris más tenue */
+    margin: 6px 0; /* Menos espacio arriba y abajo */
+}
+

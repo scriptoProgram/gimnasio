@@ -6,9 +6,9 @@ function renderNavbar($role) { ?>
     <link rel="stylesheet" href="../public/css/normalize.css">
     <link rel="stylesheet" href="../public/css/navbar.css">
     <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
-    <div class="fixed bg-black left-0 w-[11rem] h-full p-[0.5rem]" id="navbar">
-        <div id="content-logo">
-            <img class="p-[0.5rem]" src="../public/images/logo-navbar.jpg" alt="infamous gym">
+    <div class="fixed bg-black left-0 w-[16rem] h-full p-[12px]" id="navbar">
+        <div class="flex justify-center" id="content-logo">
+            <img class="p-[0.5rem] w-[11rem]" src="../public/images/logo-navbar.jpg" alt="infamous gym">
         </div>
         <nav>
             <div class="static flex flex-col">
@@ -88,6 +88,7 @@ function renderNavbar($role) { ?>
                 </ul>
             </div>
         </nav>
+        <hr>
         <nav>
             <ul>
                 <li>
@@ -100,10 +101,11 @@ function renderNavbar($role) { ?>
                 </li>
             </ul>
         </nav>
+        <hr>
         <div class="grid justify-items-center" id="content-user">
             <h2 class="text-white">¡Bienvenido!</h2>
             <img class="w-[4rem] rounded-[50%]" src="../public/images/profile-man.png" alt="#">
-            <p class="text-white text-center"><?php echo $_SESSION['name']; ?></p>
+            <p class="capitalize text-white text-center"><?php echo strtolower($_SESSION['name']); ?></p>
         </div>
     </div>
 <?php } ?>
