@@ -1,6 +1,4 @@
 <?php
-    // require_once __DIR__ . './../models/userModel.php';
-    // require_once './../helpers/sessionHelper.php';
     require_once realpath(__DIR__ . '/../models/userModel.php');
     require_once realpath(__DIR__ . '/../helpers/sessionHelper.php');
 
@@ -9,10 +7,22 @@
             $user = UserModel::getUserByEmail($email);
 
             if ($user && password_verify($password, $user['pass'])) {
-                $token = bin2hex(random_bytes(32));
+                // session_start();
+                $token = bin2hex(random_bytes(15));
                 SessionHelper::startSession($user['id'], $user['tipo'], $token);
+                
+                // DETALLLES DEL USUARIO
+                $userDetails = UserModel::getUserById($user['id']);
+                if ($userDetails) {
+                    SessionHelper::sessionDetails($userDetails['nombre'], $userDetails['correo'], $userDetails['estatus']);
+                    echo '<pre>';
+                    print_r($_SESSION);
+                    echo '</pre>';
+                }
+
                 header("Location: /gimnasio/views/main.php");
                 exit();
+
             } else {
                 // return "Correo o contraseña incorrectos.";
                 $_SESSION['login_error'] = "Correo o contraseña incorrectos.";
@@ -22,8 +32,6 @@
         }
 
         public static function logout() {
-            // sessionHelper::logout();
-            // header('Location: /login');
             SessionHelper::destroySession();
             header("Location: /gimnasio");
             exit();
