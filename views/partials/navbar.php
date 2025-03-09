@@ -100,10 +100,10 @@ function renderNavbar($role) { ?>
                 </li>
             </ul>
         </nav>
-        <div id="content-user">
+        <div class="grid justify-items-center" id="content-user">
             <h2 class="text-white">¡Bienvenido!</h2>
-            <img class="w-[5rem] rounded-[50%]" src="../public/images/profile-man.png" alt="#">
-            <p class="text-white"><?php echo $_SESSION['name']; ?></p>
+            <img class="w-[4rem] rounded-[50%]" src="../public/images/profile-man.png" alt="#">
+            <p class="text-white text-center"><?php echo $_SESSION['name']; ?></p>
         </div>
     </div>
 <?php } ?>

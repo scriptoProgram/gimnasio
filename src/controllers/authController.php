@@ -15,9 +15,9 @@
                 $userDetails = UserModel::getUserById($user['id']);
                 if ($userDetails) {
                     SessionHelper::sessionDetails($userDetails['nombre'], $userDetails['correo'], $userDetails['estatus']);
-                    echo '<pre>';
-                    print_r($_SESSION);
-                    echo '</pre>';
+                    // echo '<pre>';
+                    // print_r($_SESSION);
+                    // echo '</pre>';
                 }
 
                 header("Location: /gimnasio/views/main.php");
