@@ -8,15 +8,24 @@ a:hover {
 }
 #navbar {
     font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
-/* hr {
-    border: 1px solid #CECECE;
-    margin: 10px 0;
-} */
+#content-user {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
 hr {
     border: none;
     height: 1px;
-    background-color: #7D7D7D; /* Un gris más tenue */
-    margin: 6px 0; /* Menos espacio arriba y abajo */
+    background-color: #7D7D7D;
+    margin: 6px 0;
 }
-
+#navbar > hr:nth-child(3) {
+    margin-top: auto;
+}
+#navbar > hr:nth-child(5) {
+    margin-bottom: 1rem;
+}
