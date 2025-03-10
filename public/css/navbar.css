@@ -1,3 +1,4 @@
+/* @tailwind comopnents; */
 a {
     padding: 0.5rem 0.6rem;
     align-items: center;
@@ -29,3 +30,9 @@ hr {
 #navbar > hr:nth-child(5) {
     margin-bottom: 1rem;
 }
+
+/* @layer components {
+    .link-child {
+        @apply text-lg text-gray-700 bg-gray-100 p-4 rounded-lg;
+    }
+} */

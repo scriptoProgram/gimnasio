@@ -13,7 +13,7 @@ require_once __DIR__ . '../../src/controllers/siteController.php';
 </head>
 <body>
     <?php SiteController::addNavbar(); ?>
-    <main class="absolute left-44 mt-[1rem] ml-[1rem] mb-[1rem]">
+    <main class="absolute left-44 pt-[1.5rem] pl-[1.5rem] pb-[1.5rem]">
         
     </main>
 </body>

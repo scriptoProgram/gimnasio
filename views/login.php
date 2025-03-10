@@ -1,6 +1,7 @@
 <?php
 session_start();
 // require_once '../src/config/url_config.php';
+require_once __DIR__ . '/../src/controllers/authController.php';
 require_once __DIR__ . '/../src/config/url_config.php';
 $error = "";
 
