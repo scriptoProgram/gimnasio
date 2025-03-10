@@ -8,10 +8,10 @@ function renderNavbar($role)
     <link rel="stylesheet" href="../public/css/navbar.css">
     <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
     <div class="fixed bg-black left-0 w-[16rem] h-full p-[12px]" id="navbar">
-        <div class="flex justify-center" id="content-logo">
+        <div class="flex justify-center mt-[1rem] mb-[0.5rem]" id="content-logo">
             <img class="p-[0.5rem] w-[11rem]" src="../public/images/logo-navbar.jpg" alt="infamous gym">
         </div>
-        <nav data-id="menu">
+        <nav class="mt-[0.5rem]" data-id="menu">
             <div class="static flex flex-col">
                 <ul class="grid grid-cols-1 gap-1">
                     <li class="link-parent">
@@ -64,7 +64,7 @@ function renderNavbar($role)
                                 <a href="#">Buscar Empleado</a>
                             </li>
                             <li class="p-4 pl-1">
-                                <a href="#">Registrar Empleado</a>
+                                <a href="employee/register.php">Registrar Empleado</a>
                             </li>
                             <li class="p-4 pl-1">
                                 <a href="#">Buscar Empleados</a>

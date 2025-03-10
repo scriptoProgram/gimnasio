@@ -1,1 +1,0 @@
-USO: scripts de frontend
