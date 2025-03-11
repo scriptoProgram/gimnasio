@@ -1,7 +1,8 @@
 <?php
 class SessionHelper {
     public static  function startSession($id, $type, $token) {
-        session_start();
+        // session_start();
+        // require_once __DIR__ . '/../helpers/auth_session.php';
         $_SESSION['us_id'] = $id;
         $_SESSION['us_type'] = $type;
         $_SESSION['us_token'] = $token;
