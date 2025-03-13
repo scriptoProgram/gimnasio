@@ -59,16 +59,25 @@ function renderNavbar($role)
                             Gestión de Empleados
                             <img src="<?php echo ROOT; ?>public/icons/arrow.svg" class="arrow-buttom ml-auto transition-transform font-semibold" data-row>
                         </a>
-                        <ul class="link-child overflow-hidden ml-8 text-white border-l border-gray-400">
+                        <ul class="link-child overflow-hidden ml-4 text-white border-l border-gray-400">
                         <!-- <ul class="link-child"> -->
-                            <li class="p-4 pl-1">
-                                <a href="#">Buscar Empleado</a>
+                            <li class="m-4 ml-1">
+                                <a href="#" data-modal="search-employee">Buscar Empleado</a>
                             </li>
-                            <li class="p-4 pl-1">
-                                <a href="<?php echo URL_VIEW_EMPLOYEE; ?>register.php">Registrar Empleado</a>
+                            <li class="m-4 ml-1">
+                                <a href="#" data-model="register-employee">Registrar Empleado</a>
                             </li>
-                            <li class="p-4 pl-1">
-                                <a href="#">Buscar Empleados</a>
+                            <li class="m-4 ml-1">
+                                <a href="#">Horarios y Disponibilidad</a>
+                            </li>
+                            <li class="m-4 ml-1">
+                                <a href="#">Asignación de Coaches</a>
+                            </li>
+                            <li class="m-4 ml-1">
+                                <a href="#">Pagos y Comisiones</a>
+                            </li>
+                            <li class="m-4 ml-1">
+                                <a href="#">Reportes y Desempeño</a>
                             </li>
                         </ul>
                     </li>

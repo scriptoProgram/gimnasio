@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login -Gimnasio</title>
-    <link rel="stylesheet" href="<?php echo URL_BASE_PUBLIC;?>css/normalize.css">
+    <link rel="stylesheet" href="<?php echo URL_CSS;?>normalize.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="<?php echo URL_BASE_PUBLIC;?>css/login.css">
+    <link rel="stylesheet" href="<?php echo URL_CSS;?>login.css">
 </head>
 
 <body>
