@@ -10,7 +10,7 @@ function renderNavbar($role)
     <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
     <div class="fixed bg-black left-0 w-[16rem] h-full p-[12px]" id="navbar">
         <div class="flex justify-center mt-[1rem] mb-[0.5rem]" id="content-logo">
-            <img class="p-[0.5rem] w-[11rem]" src="<?php echo ROOT ?>public/images/logo-navbar.jpg" alt="infamous gym">
+            <img class="p-[0.5rem] w-[11rem]" src="<?php echo URL_IMAGES ?>logo-navbar.jpg" alt="infamous gym">
         </div>
         <nav class="mt-[0.5rem]" data-id="menu" id="navbar-menu">
             <div class="static flex flex-col">
@@ -57,7 +57,7 @@ function renderNavbar($role)
                                     d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
                             Gestión de Empleados
-                            <img src="<?php echo ROOT; ?>public/icons/arrow.svg" class="arrow-buttom ml-auto transition-transform font-semibold" data-row>
+                            <img src="<?php echo URL_ICONS; ?>arrow.svg" class="arrow-buttom ml-auto transition-transform font-semibold" data-row>
                         </a>
                         <ul class="link-child overflow-hidden ml-4 text-white border-l border-gray-400">
                         <!-- <ul class="link-child"> -->
@@ -138,7 +138,7 @@ function renderNavbar($role)
         <nav>
             <ul>
                 <li class="link-parent">
-                    <a class='text-white font-semibold grid auto-cols-[minmax(0,1fr)_minmax(0,8fr)] grid-flow-col gap-2' href='/gimnasio/src/public/logout.php'>
+                    <a class='text-white font-semibold grid auto-cols-[minmax(0,1fr)_minmax(0,8fr)] grid-flow-col gap-2' href='<?php echo URL_SRC_PUBLIC; ?>logout.php'>
                         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'>
                             <path stroke-linecap='round' stroke-linejoin='round'
                                 d='M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75' />
