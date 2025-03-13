@@ -12,7 +12,7 @@ function renderNavbar($role)
         <div class="flex justify-center mt-[1rem] mb-[0.5rem]" id="content-logo">
             <img class="p-[0.5rem] w-[11rem]" src="<?php echo ROOT ?>public/images/logo-navbar.jpg" alt="infamous gym">
         </div>
-        <nav class="mt-[0.5rem]" data-id="menu">
+        <nav class="mt-[0.5rem]" data-id="menu" id="navbar-menu">
             <div class="static flex flex-col">
                 <ul class="grid grid-cols-1 gap-1">
                     <li class="link-parent">
@@ -48,7 +48,7 @@ function renderNavbar($role)
                             Gestión de Pagos
                         </a>
                     </li>
-                    <li class="link-parent grid grid-rows-[max-content_0fr] overflow-hidden transition-[grid-tamplates-rows] cursor-pointer data-[toggle]:grid-rows-[max-content_1fr]">
+                    <li class="link-parent grid grid-rows-[max-content_0fr] overflow-hidden transition-[grid-tamplates-rows] data-[toggle]:grid-rows-[max-content_1fr]">
                     <!-- <li class="link-parent"> -->
                         <a class='text-white font-semibold grid auto-cols-[minmax(0,1fr)_minmax(0,7fr)_minmax(0,1fr)] grid-flow-col gap-2' href='#' data-dropdown>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -61,22 +61,22 @@ function renderNavbar($role)
                         </a>
                         <ul class="link-child overflow-hidden ml-4 text-white border-l border-gray-400">
                         <!-- <ul class="link-child"> -->
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#" data-modal="search-employee">Buscar Empleado</a>
                             </li>
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#" data-model="register-employee">Registrar Empleado</a>
                             </li>
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#">Horarios y Disponibilidad</a>
                             </li>
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#">Asignación de Coaches</a>
                             </li>
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#">Pagos y Comisiones</a>
                             </li>
-                            <li class="m-4 ml-1">
+                            <li class="ml-1 mt-4 mb-4">
                                 <a href="#">Reportes y Desempeño</a>
                             </li>
                         </ul>
@@ -150,7 +150,7 @@ function renderNavbar($role)
         <hr>
         <div class="grid justify-items-center" id="content-user">
             <h2 class="text-white font-semibold m-[0.3rem]">¡Bienvenido!</h2>
-            <img class="w-[4rem] rounded-[50%] m-[0.3rem]" src="<?php echo ROOT ?>public/images/profile-man.png" alt="#">
+            <img class="w-[4rem] rounded-[50%] m-[0.3rem]" src="<?php echo URL_IMAGES ?>profile-man.png" alt="#">
             <p class="capitalize text-white text-center font-semibold m-[0.3rem]">
                 <?php echo strtolower($_SESSION['name']); ?></p>
         </div>

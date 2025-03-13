@@ -7,6 +7,10 @@ a:hover {
     background-color: #c1001752;
     border-radius: 15px;
 }
+#navbar-menu {
+    overflow-y: auto;
+    max-height: 37rem;
+}
 #navbar {
     font-size: 15px;
     display: flex;
@@ -25,7 +29,7 @@ hr {
     margin: 6px 0;
 }
 #navbar > hr:nth-child(3) {
-    margin-top: auto;
+    margin-top: 0.5rem;
 }
 #navbar > hr:nth-child(5) {
     margin-bottom: 1rem;
