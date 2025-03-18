@@ -61,22 +61,22 @@ function renderNavbar($role)
                         </a>
                         <ul class="link-child overflow-hidden ml-4 text-white border-l border-gray-400">
                         <!-- <ul class="link-child"> -->
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#" data-modal="search-employee">Buscar Empleado</a>
                             </li>
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#" data-model="register-employee">Registrar Empleado</a>
                             </li>
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#">Horarios y Disponibilidad</a>
                             </li>
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#">Asignación de Coaches</a>
                             </li>
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#">Pagos y Comisiones</a>
                             </li>
-                            <li class="ml-1 mt-4 mb-4">
+                            <li class="ml-1 my-5">
                                 <a href="#">Reportes y Desempeño</a>
                             </li>
                         </ul>
