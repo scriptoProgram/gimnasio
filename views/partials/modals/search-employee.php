@@ -1,7 +1,7 @@
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 
 <!-- Modal (Oculto por defecto) -->
-<div id="search-employee" class="fixed inset-0">
+<div id="search-employee" class="fixed inset-0 hidden" data-modal="search-employee">
     <div class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
         <div class="modal-bg-container fixed inset-0 bg-gray-700 opacity-75"></div>

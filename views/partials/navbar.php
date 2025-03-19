@@ -5,8 +5,8 @@ require_once __DIR__ . '/../../src/config/url_config.php';
 function renderNavbar($role)
 { ?>
 
-    <link rel="stylesheet" href="<?php echo ROOT ?>public/css/normalize.css">
-    <link rel="stylesheet" href="<?php echo ROOT ?>public/css/navbar.css">
+    <link rel="stylesheet" href="<?php echo URL_CSS ?>normalize.css">
+    <link rel="stylesheet" href="<?php echo URL_CSS ?>navbar.css">
     <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
     <div class="fixed bg-black left-0 w-[16rem] h-full p-[12px]" id="navbar">
         <div class="flex justify-center mt-[1rem] mb-[1rem]" id="content-logo">
@@ -62,10 +62,12 @@ function renderNavbar($role)
                         <ul class="link-child overflow-hidden ml-4 text-white border-l border-gray-400">
                         <!-- <ul class="link-child"> -->
                             <li class="ml-1 my-5">
-                                <a href="#" data-modal="search-employee">Buscar Empleado</a>
+                                <a href="#"  data-modal="search-employee">Buscar Empleado</a>
                             </li>
                             <li class="ml-1 my-5">
-                                <a href="#" data-model="register-employee">Registrar Empleado</a>
+                                <!-- <a href="#" data-model="register-employee">Registrar Empleado</a> -->
+                                 <?php include 'modals/search-employee.php'; ?>
+                                <a href="#" class="open-modal" data-modal="search-employee">Registrar Empleado</a>
                             </li>
                             <li class="ml-1 my-5">
                                 <a href="#">Horarios y Disponibilidad</a>
