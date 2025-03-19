@@ -9,7 +9,7 @@ function renderNavbar($role)
     <link rel="stylesheet" href="<?php echo ROOT ?>public/css/navbar.css">
     <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
     <div class="fixed bg-black left-0 w-[16rem] h-full p-[12px]" id="navbar">
-        <div class="flex justify-center mt-[1rem] mb-[0.5rem]" id="content-logo">
+        <div class="flex justify-center mt-[1rem] mb-[1rem]" id="content-logo">
             <img class="p-[0.5rem] w-[11rem]" src="<?php echo URL_IMAGES ?>logo-navbar.jpg" alt="infamous gym">
         </div>
         <nav class="mt-[0.5rem]" data-id="menu" id="navbar-menu">
@@ -155,5 +155,6 @@ function renderNavbar($role)
                 <?php echo strtolower($_SESSION['name']); ?></p>
         </div>
     </div>
-    <script src="<?php echo ROOT ?>src/js/navbar.js"></script>
+    <!-- <script src="< ?php echo ROOT ?>src/js/navbar.js"></script> -->
+    <script src="<?php echo URL_JS ?>navbar.js"></script>
 <?php } ?>

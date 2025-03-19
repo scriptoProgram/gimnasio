@@ -6,10 +6,14 @@ a {
 a:hover {
     background-color: #c1001752;
     border-radius: 15px;
+    margin-right: 2px;
 }
 #navbar-menu {
     overflow-y: auto;
     max-height: 37rem;
+    position: relative;
+    z-index: 3;
+    width: 241px;
 }
 #navbar {
     font-size: 15px;
@@ -19,7 +23,8 @@ a:hover {
     height: 100vh;
 }
 #content-user {
-    margin-top: auto;
+    /* margin-top: auto; */
+    margin-top: 0.5rem  ;
     margin-bottom: 1rem;
 }
 hr {
@@ -29,7 +34,7 @@ hr {
     margin: 6px 0;
 }
 #navbar > hr:nth-child(3) {
-    margin-top: 0.5rem;
+    margin-top: auto;
 }
 #navbar > hr:nth-child(5) {
     margin-bottom: 1rem;
