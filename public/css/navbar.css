@@ -34,9 +34,19 @@ hr {
 #navbar > hr:nth-child(5) {
     margin-bottom: 1rem;
 }
-
-/* @layer components {
-    .link-child {
-        @apply text-lg text-gray-700 bg-gray-100 p-4 rounded-lg;
-    }
-} */
+/* SCROLL */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #222;
+}
+::-webkit-scrollbar-thumb {
+    /* background: linear-gradient(180deg, #B40425, #93031F1); */
+    background: #93031F;
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #cd2141;
+    box-shadow: 0 0 6px rgba(255, 77, 109, 0.6);
+}
