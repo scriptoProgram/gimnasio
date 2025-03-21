@@ -1,6 +1,6 @@
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 
-<div id="register-employee" class="fixed inset-0 hidden opacity-0 scale-95 transition-all duration-300 ease-out">
+<div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out">
 <!-- <div id="register-employee" class="fixed inset-0"> -->
     <div id="modal-components" class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
@@ -22,7 +22,7 @@
             <div id="modal-body">
                 <form action="#" method="post">
                     <fieldset>
-                        <legend></legend>
+                        <legend>datos personales</legend>
                         <label for="name-emlpoyee">Nombre completo:</label>
                         <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón">
                         <label for="email-emlpoyee">Correo:</label>
@@ -37,8 +37,8 @@
                         </select>
                     </fieldset>
                     <!-- Domicilio -->
-                    <fieldset>
-                        <legend>Domicilio</legend>
+                    <fieldset class="border-red-50">
+                        <legend>domicilio</legend>
                         <label for="state-emlpoyee">Estado:</label>
                         <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México">
                         <label for="city-emlpoyee">Ciudad:</label>
@@ -55,8 +55,8 @@
                         <input type="text" id="numInt-employee" name="numInt-employee" placeholder="Ej: 58">
                     </fieldset>
                     <!-- Documentación -->
-                    <fieldset>
-                        <legend>Documentación</legend>
+                    <fieldset class="border-red-50">
+                        <legend>documentación</legend>
                         <label for="birth-certificate">Acta de nacimiento:</label>
                         <input type="file" id="birth-certificate" name="birth-certificate" accept="pdf">
                         <label for="curp">Curp:</label>

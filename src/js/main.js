@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const openModalBtn =  document.querySelector('.open-modal') /* Boton enlace navbar */
     const modal = document.getElementById(openModalBtn.getAttribute('data-modal'))
     const cancelModalBtn = document.querySelector('#cancel-btn')
-    const darkBg = document.getElementById('dark-bg')
+    // const darkBg = document.getElementById('dark-bg')
 
     openModalBtn.addEventListener("click", function () {
         modal.classList.remove('hidden')
