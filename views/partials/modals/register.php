@@ -1,15 +1,15 @@
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 
-<!-- <div id="register-employee" class="fixed inset-0 hidden"> -->
-<div id="register-employee" class="fixed inset-0">
+<div id="register-employee" class="fixed inset-0 hidden opacity-0 scale-95 transition-all duration-300 ease-out">
+<!-- <div id="register-employee" class="fixed inset-0"> -->
     <div id="modal-components" class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
-        <div id="dark-bg" class="modal-bg-container fixed inset-0 bg-black opacity-75"></div>
+        <div id="dark-bg" class="modal-bg-container fixed inset-0 bg-black opacity-50"></div>
         <!-- Espaciador para centrar en pantallas grandes -->
         <div class="modal-space-container hidden sm:inline-block sm:align-middle sm:h-screen"></div>
 
         <!-- Contenedor del Modal -->
-        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full p-[1rem]">
+        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full p-[1rem] text-black">
             <div id="modal-header" class="modal-content flex justify-between">
                 <h5 class="text-lg font-medium text-gray-900">Registro de empleados</h5>
                 <button id="cancel-btn" class="text-black cursor-pointer">
@@ -21,39 +21,49 @@
             <hr>
             <div id="modal-body">
                 <form action="#" method="post">
-                    <label for="name-emlpoyee">Nombre completo:</label>
-                    <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón">
-                    <label for="email-emlpoyee">Correo:</label>
-                    <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com">
-                    <label for="phone-emlpoyee">Teléfono:</label>
-                    <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890">
-                    <label for="type-emlpoyee">Tipo:</label>
-                    <select name="type-emlpoyee" id="type-emlpoyee">
-                        <option value="" selected>selecciona una opción</option>
-                        <option value="ADMINISTRADOR">administrador</option>
-                        <option value="USUARIO">usuario</option>
-                    </select>
+                    <fieldset>
+                        <legend></legend>
+                        <label for="name-emlpoyee">Nombre completo:</label>
+                        <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón">
+                        <label for="email-emlpoyee">Correo:</label>
+                        <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com">
+                        <label for="phone-emlpoyee">Teléfono:</label>
+                        <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890">
+                        <label for="type-emlpoyee">Tipo:</label>
+                        <select name="type-emlpoyee" id="type-emlpoyee">
+                            <option value="" selected disabled>selecciona una opción</option>
+                            <option value="ADMINISTRADOR">administrador</option>
+                            <option value="USUARIO">usuario</option>
+                        </select>
+                    </fieldset>
                     <!-- Domicilio -->
-                    <label for="state-emlpoyee">Estado:</label>
-                    <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México">
-                    <label for="city-emlpoyee">Ciudad:</label>
-                    <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México">
-                    <label for="cp-emlpoyee">Código Postal:</label>
-                    <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México">
-                    <label for="colony-emlpoyee">Colonia:</label>
-                    <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced">
-                    <label for="street-emlpoyee">Calle:</label>
-                    <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS">
-                    <label for="numExt-emlpoyee">Num. Ext:</label>
-                    <input type="number" id="numExt-employee" name="numExt-employee" placeholder="Ej: 58">
-                    <label for="numInt-emlpoyee">Num. Int:</label>
-                    <input type="text" id="numInt-employee" name="numInt-employee" placeholder="Ej: 58">
-                    <label for="street-emlpoyee">Acta de nacimiento:</label>
-                    <!-- <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS"> -->
-                    <label for="street-emlpoyee">Curp:</label>
-                    <!-- <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS"> -->
-                    <label for="street-emlpoyee">INE:</label>
-                    <!-- <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS"> -->
+                    <fieldset>
+                        <legend>Domicilio</legend>
+                        <label for="state-emlpoyee">Estado:</label>
+                        <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México">
+                        <label for="city-emlpoyee">Ciudad:</label>
+                        <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México">
+                        <label for="cp-emlpoyee">Código Postal:</label>
+                        <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México">
+                        <label for="colony-emlpoyee">Colonia:</label>
+                        <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced">
+                        <label for="street-emlpoyee">Calle:</label>
+                        <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS">
+                        <label for="numExt-emlpoyee">Num. Ext:</label>
+                        <input type="number" id="numExt-employee" name="numExt-employee" placeholder="Ej: 58">
+                        <label for="numInt-emlpoyee">Num. Int:</label>
+                        <input type="text" id="numInt-employee" name="numInt-employee" placeholder="Ej: 58">
+                    </fieldset>
+                    <!-- Documentación -->
+                    <fieldset>
+                        <legend>Documentación</legend>
+                        <label for="birth-certificate">Acta de nacimiento:</label>
+                        <input type="file" id="birth-certificate" name="birth-certificate" accept="pdf">
+                        <label for="curp">Curp:</label>
+                        <input type="file" id="curp" name="curp" accept="pdf">
+                        <label for="id">INE:</label>
+                        <input type="file" id="id" name="id" accept="pdf">
+                    </fieldset>
                 </form>
             </div>
             <!-- Contenido -->
@@ -84,26 +94,3 @@
         </div>
     </div>
 </div>
-
-<!-- JavaScript para abrir y cerrar el modal -->
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("search-employee");
-        const acceptBtn = document.getElementById("accept-btn");
-        const cancelBtn = document.getElementById("cancel-btn");
-
-        // Mostrar el modal (ejemplo de activación)
-        function openModal() {
-            modal.classList.remove("hidden");
-        }
-
-        // Ocultar el modal
-        function closeModal() {
-            modal.classList.add("hidden");
-        }
-
-        // Eventos de botones
-        acceptBtn.addEventListener("click", closeModal);
-        cancelBtn.addEventListener("click", closeModal);
-    });
-</script> -->
