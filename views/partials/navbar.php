@@ -67,7 +67,7 @@ function renderNavbar($role)
                             <li class="ml-1 my-5">
                                 <!-- <a href="#" data-model="register-employee">Registrar Empleado</a> -->
                                 <?php include 'modals/register.php'; ?>
-                                <a href="#" class="open-modal" data-modal="search-employee">Registrar Empleado</a>
+                                <a href="#" class="open-modal" data-modal="register-employee">Registrar Empleado</a>
                             </li>
                             <li class="ml-1 my-5">
                                 <a href="#">Horarios y Disponibilidad</a>

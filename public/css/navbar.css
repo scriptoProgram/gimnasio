@@ -6,7 +6,7 @@ a {
 a:hover {
     background-color: #c1001752;
     border-radius: 15px;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 #navbar-menu {
     overflow-y: auto;
@@ -14,6 +14,7 @@ a:hover {
     position: relative;
     z-index: 3;
     width: 241px;
+    margin-bottom: 0.5rem;
 }
 #navbar {
     font-size: 15px;
