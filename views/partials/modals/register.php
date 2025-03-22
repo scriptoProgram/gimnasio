@@ -1,7 +1,7 @@
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 
-<div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out">
-<!-- <div id="register-employee" class="fixed inset-0"> -->
+<div id="register-employee" class="fixed inset-0 scale-100 transition-all duration-300 ease-out">
+<!-- <div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out"> -->
     <div id="modal-components" class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
         <div id="dark-bg" class="modal-bg-container fixed inset-0 bg-black opacity-50"></div>
@@ -29,12 +29,16 @@
                         <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="phone-emlpoyee">Teléfono:</label>
                         <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
+                        <br>
+                        <br>
+                        <input type="text" name="username" id="username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="janesmith">
+                        <br>
                         <label for="type-emlpoyee">Tipo:</label>
-                        <select name="type-emlpoyee" id="type-emlpoyee">
+                        <select name="type-emlpoyee" id="type-emlpoyee" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                             <option value="" selected disabled>selecciona una opción</option>
                             <option value="ADMINISTRADOR">administrador</option>
                             <option value="USUARIO">usuario</option>
-                        </select>
+                        </select>                        
                     </fieldset>
                     <!-- Domicilio -->
                     <fieldset class="border-red-50">
