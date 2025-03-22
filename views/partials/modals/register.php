@@ -30,11 +30,25 @@
                         <label for="phone-emlpoyee">Teléfono:</label>
                         <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="type-emlpoyee">Tipo:</label>
-                        <select name="type-emlpoyee" id="type-emlpoyee">
+                        <select name="type-emlpoyee" id="type-emlpoyee" class="hover:bg-violet-600">
                             <option value="" selected disabled>selecciona una opción</option>
                             <option value="ADMINISTRADOR">administrador</option>
                             <option value="USUARIO">usuario</option>
                         </select>
+                        <div class="relative w-64">
+                            <select class="rounded-md px-4 py-2 pr-8 appearance-none">
+                                <option value="" selected disabled>Selecciona una opción</option>
+                                <option value="ADMINISTRADOR">Administrador</option>
+                                <option value="USUARIO">Usuario</option>
+                            </select>
+                            <!-- Icono personalizado -->
+                            <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
+                                <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+
                     </fieldset>
                     <!-- Domicilio -->
                     <fieldset class="border-red-50">
