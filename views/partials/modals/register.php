@@ -18,6 +18,7 @@
                     </svg>
                 </button>
             </div>
+            <div></div>
             <hr>
             <div id="modal-body">
                 <form action="#" method="post">
