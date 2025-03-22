@@ -24,11 +24,11 @@
                     <fieldset>
                         <legend>datos personales</legend>
                         <label for="name-emlpoyee">Nombre completo:</label>
-                        <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón">
+                        <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="email-emlpoyee">Correo:</label>
-                        <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com">
+                        <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="phone-emlpoyee">Teléfono:</label>
-                        <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890">
+                        <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="type-emlpoyee">Tipo:</label>
                         <select name="type-emlpoyee" id="type-emlpoyee">
                             <option value="" selected disabled>selecciona una opción</option>
