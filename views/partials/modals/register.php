@@ -35,7 +35,6 @@
                         <input type="text" name="username" id="username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="janesmith">
                         <br>
                         <label for="type-emlpoyee">Tipo:</label>
-<<<<<<< HEAD
                         <select name="type-emlpoyee" id="type-emlpoyee" class="hover:bg-violet-600">
                             <option value="" selected disabled>selecciona una opción</option>
                             <option value="ADMINISTRADOR">administrador</option>
@@ -53,15 +52,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
-                        </div>
-
-=======
-                        <select name="type-emlpoyee" id="type-emlpoyee" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
-                            <option value="" selected disabled>selecciona una opción</option>
-                            <option value="ADMINISTRADOR">administrador</option>
-                            <option value="USUARIO">usuario</option>
-                        </select>                        
->>>>>>> dbb5f6b4f1b3b885766c8fc5e0f7ed8d470154a2
+                        </div>                        
                     </fieldset>
                     <!-- Domicilio -->
                     <fieldset class="border-red-50">
