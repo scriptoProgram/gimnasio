@@ -1,7 +1,7 @@
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 
 <div id="register-employee" class="fixed inset-0 scale-100 transition-all duration-300 ease-out">
-<!-- <div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out"> -->
+    <!-- <div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out"> -->
     <div id="modal-components" class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
         <div id="dark-bg" class="modal-bg-container fixed inset-0 bg-black opacity-50"></div>
@@ -9,7 +9,7 @@
         <div class="modal-space-container hidden sm:inline-block sm:align-middle sm:h-screen"></div>
 
         <!-- Contenedor del Modal -->
-        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full p-[1rem] text-black">
+        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] max-h-[90vh]  text-black">
             <div id="modal-header" class="modal-content flex justify-between">
                 <h5 class="text-lg font-medium text-gray-900">Registro de empleados</h5>
                 <button id="cancel-btn" class="text-black cursor-pointer">
@@ -22,37 +22,64 @@
             <hr>
             <div id="modal-body">
                 <form action="#" method="post">
+                    <!-- Foto de perfil -->
+                    <div class="flex flex-col items-center space-y-3">
+                        <div id="image-previewF" class="w-32 h-32 border border-gray-300 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
+                            <img id="preview-imgF" onclick="document.getElementById('profile-image1').click()" src="<?php echo URL_IMAGES ?>profile-man.png" class="w-full h-full object-cover" alt="Previsualización">
+                            <!-- <span id="placeholder-text" class="text-gray-500">Sin imagen</span> -->
+                        </div>
+                        <input type="file" id="profile-image1" name="profile-image1" accept="image/*" class="hidden">
+                        <button type="button" onclick="document.getElementById('profile-image1').click()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                            cargar foto
+                        </button>
+                    </div>
+                    <!-- BAR DEL FORMULARIO -->
+                    <div role="tablist" aria-orientation="horizontal" class="h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground grid grid-cols-3 mb-6" tabindex="0" data-orientation="horizontal" style="outline: none;">
+                        <button type="button" role="tab" aria-selected="false" aria-controls="radix-«r0»-content-personal" data-state="inactive" id="radix-«r0»-trigger-personal" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-4 w-4">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span>Datos Personales</span>
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="radix-«r0»-content-address" data-state="inactive" id="radix-«r0»-trigger-address" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Domicilio</span>
+                        </button>
+                        <button type="button" role="tab" aria-selected="true" aria-controls="radix-«r0»-content-documents" data-state="active" id="radix-«r0»-trigger-documents" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="0" data-orientation="horizontal" data-radix-collection-item="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text h-4 w-4">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                <path d="M10 9H8"></path>
+                                <path d="M16 13H8"></path>
+                                <path d="M16 17H8"></path>
+                            </svg>
+                            <span>Documentación</span>
+                        </button>
+                    </div>
+                    <!-- BAR DEL FORMULARIO -->
+                    <div role="tablist" class="h-10 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6" style="outline:none;">
+                        <button type="button" role="tab"></button>
+                        <button type="button" role="tab"></button>
+                        <button type="button" role="tab"></button>
+                    </div>
                     <fieldset>
                         <legend>datos personales</legend>
                         <label for="name-emlpoyee">Nombre completo:</label>
-                        <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
+                        <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón" class="border-solid border-1 border-gray-400 rounded-sm py-[3px] px-[6px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500 w-[18rem]">
                         <label for="email-emlpoyee">Correo:</label>
                         <input type="text" id="email-employee" name="email-employee" placeholder="Ej: juan_perez@gmail.com" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
                         <label for="phone-emlpoyee">Teléfono:</label>
                         <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890" class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500">
-                        <br>
-                        <br>
-                        <input type="text" name="username" id="username" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="janesmith">
-                        <br>
                         <label for="type-emlpoyee">Tipo:</label>
                         <select name="type-emlpoyee" id="type-emlpoyee" class="hover:bg-violet-600">
                             <option value="" selected disabled>selecciona una opción</option>
                             <option value="ADMINISTRADOR">administrador</option>
                             <option value="USUARIO">usuario</option>
                         </select>
-                        <div class="relative w-64">
-                            <select class="rounded-md px-4 py-2 pr-8 appearance-none">
-                                <option value="" selected disabled>Selecciona una opción</option>
-                                <option value="ADMINISTRADOR">Administrador</option>
-                                <option value="USUARIO">Usuario</option>
-                            </select>
-                            <!-- Icono personalizado -->
-                            <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                                <svg class="w-4 h-4 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
-                        </div>                        
                     </fieldset>
                     <!-- Domicilio -->
                     <fieldset class="border-red-50">
@@ -84,31 +111,6 @@
                     </fieldset>
                 </form>
             </div>
-            <!-- Contenido -->
-            <!-- <div class="modal-wrapper bg-white px-4 pt-5 pb-4">
-                <div class="modal-wrapper-flex sm:flex sm:items-start">
-                    < !-- Ícono -- >
-                    <div class="modal-icon mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                        ❗
-                    </div>
-                    
-                    < !-- Texto -- >
-                    <div class="modal-content text-center mt-3 sm:mt-0 sm:ml-4 sm:text-left">
-                        <h3 class="text-lg font-medium text-gray-900">Title</h3>
-                        <p class="text-gray-500 text-sm">Texto de prueba para creación del modal</p>
-                    </div>
-                </div>
-            </div>
-
-            < !-- Botones -- >
-            <div class="modal-actions bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button id="accept-btn" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-transparent shadow-md px-4 py-2 bg-green-700 font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-200 sm:ml-3 sm:text-sm" type="button">
-                    Aceptar
-                </button>
-                <button id="cancel-btn" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 shadow-md px-4 py-2 mt-3 sm:mt-0 bg-red-700 font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-200 sm:ml-3 sm:text-sm" type="button">
-                    Cancelar
-                </button>
-            </div> -->
         </div>
     </div>
 </div>
