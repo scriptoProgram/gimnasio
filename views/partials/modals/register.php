@@ -9,7 +9,7 @@
         <div class="modal-space-container hidden sm:inline-block sm:align-middle sm:h-screen"></div>
 
         <!-- Contenedor del Modal -->
-        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] max-h-[90vh]  text-black">
+        <div id="content-modal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] h-[43rem] max-h-[43rem]  text-black">
             <div id="modal-header" class="modal-content flex justify-between">
                 <h5 class="text-lg font-medium text-gray-900">Registro de empleados</h5>
                 <button id="cancel-btn" class="text-black cursor-pointer">
@@ -24,7 +24,7 @@
                 <form action="#" method="post">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3">
-                        <div id="image-previewF" class="w-32 h-32 border border-gray-300 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
+                        <div id="image-preview1" class="w-32 h-32 border border-gray-300 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
                             <img id="preview-imgF" onclick="document.getElementById('profile-image1').click()" src="<?php echo URL_IMAGES ?>profile-man.png" class="w-full h-full object-cover" alt="Previsualización">
                             <!-- <span id="placeholder-text" class="text-gray-500">Sin imagen</span> -->
                         </div>
@@ -34,37 +34,26 @@
                         </button>
                     </div>
                     <!-- BAR DEL FORMULARIO -->
-                    <div role="tablist" aria-orientation="horizontal" class="h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground grid grid-cols-3 mb-6" tabindex="0" data-orientation="horizontal" style="outline: none;">
-                        <button type="button" role="tab" aria-selected="false" aria-controls="radix-«r0»-content-personal" data-state="inactive" id="radix-«r0»-trigger-personal" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-4 w-4">
-                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
+                    <div role="tablist" id="tablist" class="h-10 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6 ring" style="outline:none;">
+                        <button type="button" class="justify-center whitespace-nowrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                             </svg>
-                            <span>Datos Personales</span>
+                            datos personales
                         </button>
-                        <button type="button" role="tab" aria-selected="false" aria-controls="radix-«r0»-content-address" data-state="inactive" id="radix-«r0»-trigger-address" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
+                        <button type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
-                            <span>Domicilio</span>
+                            domicilio
                         </button>
-                        <button type="button" role="tab" aria-selected="true" aria-controls="radix-«r0»-content-documents" data-state="active" id="radix-«r0»-trigger-documents" class="justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" tabindex="0" data-orientation="horizontal" data-radix-collection-item="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text h-4 w-4">
-                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                <path d="M10 9H8"></path>
-                                <path d="M16 13H8"></path>
-                                <path d="M16 17H8"></path>
+                        <button type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                             </svg>
-                            <span>Documentación</span>
+                            documentación
                         </button>
-                    </div>
-                    <!-- BAR DEL FORMULARIO -->
-                    <div role="tablist" class="h-10 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6" style="outline:none;">
-                        <button type="button" role="tab"></button>
-                        <button type="button" role="tab"></button>
-                        <button type="button" role="tab"></button>
                     </div>
                     <fieldset>
                         <legend>datos personales</legend>
