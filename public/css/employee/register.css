@@ -1,0 +1,15 @@
+.active {
+    background-color: white;
+    color: black;        
+}
+#modal-body {
+    box-sizing: content-box;
+}
+#modal-body::-webkit-scrollbar-thumb {
+    background-color: #D1DBE3;
+    border-radius: 6px;
+}
+#modal-body::-webkit-scrollbar-track {
+    background-color: #F7F7F7;
+    border-radius: 6px;
+}

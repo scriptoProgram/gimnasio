@@ -31,7 +31,7 @@ a:hover {
 hr {
     border: none;
     height: 1px;
-    background-color: #7D7D7D;
+    background-color: #D1D1D1;
     margin: 6px 0;
 }
 #navbar > hr:nth-child(3) {

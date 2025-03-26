@@ -1,16 +1,8 @@
-<?php
-require_once __DIR__ . '/../../../src/config/url_config.php';
-?>
-<script src='https://unpkg.com/@tailwindcss/browser@4'></script>
-<style>
-    .active {
-        background-color: white;
-        color: black;        
-    }
-</style>
 
-<div id="register-employee" class="fixed inset-0 scale-100 transition-all duration-300 ease-out">
-    <!-- <div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out"> -->
+<script src='https://unpkg.com/@tailwindcss/browser@4'></script>
+<link rel="stylesheet" href="<?php echo URL_CSS ?>employee/register.css">
+
+<div id="register-employee" class="fixed inset-0 hidden scale-100 transition-all duration-300 ease-out">
     <div id="modal-components"
         class="modal-flex-container flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <!-- Fondo Oscuro -->
@@ -23,16 +15,15 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
             class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] h-[43rem] max-h-[43rem]  text-black">
             <div id="modal-header" class="modal-content flex justify-between mb-[1rem]">
                 <h2 class="text-xl font-medium text-gray-900">Registro de empleados</h2>
-                <button id="cancel-btn" class="text-black cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
+                <button id="close-btn" class="text-black cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
             <hr>
-            <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto">
-                <form action="#" method="post">
+            <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100">
+                <form action="#" method="post" id="form-register">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3 mt-[1rem] mb-[1rem]">
                         <div id="image-preview1"
@@ -50,7 +41,7 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                     </div>
                     <!-- BAR DEL FORMULARIO -->
                     <div role="tablist" id="tablist"
-                        class="h-11 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6 mr-[2px] bg-[#7D7D7D]"> <!-- style="outline:none;" -->
+                        class="h-11 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6 mr-[5px] bg-[#7D7D7D]"> <!-- style="outline:none;" -->
                         <button type="button" 
                             class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white active" data-target="personal"
                             class="justify-center whitespace-nowrap">
@@ -74,16 +65,15 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                         </button>
                         <button type="button" 
                             class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white" data-target="documentacion">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                             </svg>
                             documentación
                         </button>
                     </div>
 
-                    <div id="personal" class="content grid grid-cols-2 gap-[1rem] h-[15.4rem] pt-[8px] pb-[8px] mb-[1rem] mt-[1rem]">
+                    <!-- Personal -->
+                    <div id="personal" class="content grid grid-cols-2 gap-[1rem] h-[15.4rem] pt-[8px] pb-[8px] mt-[1rem] mb-[1rem]">
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="name-emlpoyee" class="mt-auto mb-auto">Nombre completo:</label>
                             <input type="text" id="name-employee" name="name-employee"
@@ -112,12 +102,12 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                         </div>
                     </div>
                     <!-- Domicilio -->
-                    <div id="domicilio" class="content grid grid-cols-2 gap-[1rem] h-[16.4rem] pt-[8px] mt-[1rem] hidden">
+                    <div id="domicilio" class="content grid grid-cols-2 gap-[1rem] h-[16.4rem] pt-[8px] pb-[8px] mt-[1rem] mr-[5px] hidden">
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="state-emlpoyee" class="mt-auto mb-auto">Estado:</label>
                             <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
-                        <div class="content-input grid grid-rows-2 space-y-1 mr-[2px]">
+                        <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="city-emlpoyee" class="mt-auto mb-auto">Ciudad:</label>
                             <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
@@ -125,7 +115,7 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                             <label for="cp-emlpoyee" class="mt-auto mb-auto">Código Postal:</label>
                             <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
-                        <div class="content-input grid grid-rows-2 space-y-1 mr-[2px]">
+                        <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="colony-emlpoyee" class="mt-auto mb-auto">Colonia:</label>
                             <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
@@ -133,7 +123,7 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                             <label for="street-emlpoyee" class="mt-auto mb-auto">Calle:</label>
                             <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
-                        <div class="grid grid-cols-2 gap-[1rem] mr-[2px]">
+                        <div class="grid grid-cols-2 gap-[1rem]">
                             <div class="content-input grid grid-rows-2 space-y-1">
                                 <label for="numExt-emlpoyee" class="mt-auto mb-auto">Num. Ext:</label>
                                 <input type="number" id="numExt-employee" name="numExt-employee" placeholder="Ej: 58" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
@@ -145,46 +135,75 @@ require_once __DIR__ . '/../../../src/config/url_config.php';
                         </div>
                     </div>
                     <!-- Documentación -->
-                    <div id="documentacion" class="content grid grid-cols-2 gap-[1rem] h-[16.4rem] pt-[8px] mt-[1rem] hidden">
-                        <div class="border border-dotted">
+                    <div id="documentacion" class="content grid gap-[1rem] h-[16.4rem] pt-[8px] mt-[1rem] mr-[5px] hidden">
+                        <div class="border border-dashed rounded-lg shadow-sm p-[1rem] cursor-pointer" onclick="document.getElementById('birth-certificate').click()">
+                            <div class="flex flex-col items-center space-y-2 py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <div class="text-center">
+                                    <p class="text-base">Acta de nacimiento</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Haz clic para cargar el documento o arrastra y suelta.</p>
+                                </div>
+                                <input type="file" id="birth-certificate" name="birth-certificate" accept="pdf" class="hidden">
+                            </div>
                         </div>
-                        <div></div>
-                        <div></div>
-                        <label for="birth-certificate">Acta de nacimiento:</label>
-                        <input type="file" id="birth-certificate" name="birth-certificate" accept="pdf">
-                        <label for="curp">Curp:</label>
-                        <input type="file" id="curp" name="curp" accept="pdf">
-                        <label for="id">INE:</label>
-                        <input type="file" id="id" name="id" accept="pdf">
+                        <div class="border border-dashed rounded-lg shadow-sm p-[1rem] cursor-pointer" onclick="document.getElementById('curp').click()">
+                            <div class="flex flex-col items-center space-y-2 py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <div class="text-center">
+                                    <p class="text-base">Curp</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Haz clic para cargar el documento o arrastra y suelta.</p>
+                                </div>
+                                <input type="file" id="curp" name="curp" accept="pdf" class="hidden">
+                            </div>
+                        </div>
+                        <div class="border border-dashed rounded-lg shadow-sm p-[1rem] cursor-pointer" onclick="document.getElementById('id').click()">
+                            <div class="flex flex-col items-center space-y-2 py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                <div class="text-center">
+                                    <p class="text-base">INE</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Haz clic para cargar el documento o arrastra y suelta.</p>
+                                </div>
+                                <input type="file" id="id" name="id" accept="pdf" class="hidden">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
             <hr>
-            <div id="modal-footer" class="mt-auto">
-                <p>hola</p>
+            <div id="modal-footer" class="mx-auto grid grid-rows-1 justify-items-end gap-[1rem] items-center">
+                <button type="button" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#AA1717] rounded-sm text-white font-semibold">cancelar</button>
+                <button type="submit" name="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold">registrar empleado</button>
+                <!-- <p>hola</p> -->
             </div>
         </div>
     </div>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".content");
-    console.log(contents)
+    const buttons = document.querySelectorAll(".tab-btn")
+    const contents = document.querySelectorAll(".content")
+    const form =  document.getElementById('form-register')
+    // console.log(contents)
 
     buttons.forEach(button => {
         button.addEventListener("click", function() {
             const target = this.getAttribute("data-target");
 
             // Oculta todos los contents
-            contents.forEach(fieldset => fieldset.classList.add("hidden"));
+            contents.forEach(content => content.classList.add("hidden"))
 
             // Muestra el fieldset correspondiente
-            document.getElementById(target).classList.remove("hidden");
+            document.getElementById(target).classList.remove("hidden")
 
             // Marca el botón activo
-            buttons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
+            buttons.forEach(btn => btn.classList.remove("active"))
+            this.classList.add("active")
         });
     });
 });
