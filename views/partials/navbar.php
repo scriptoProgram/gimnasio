@@ -156,6 +156,7 @@ function renderNavbar($role)
                 <?php echo strtolower($_SESSION['name']); ?></p>
         </div>
     </div>
-    <!-- <script src="< ?php echo ROOT ?>src/js/navbar.js"></script> -->
+    
     <script src="<?php echo URL_JS ?>navbar.js"></script>
+    <!-- <script src="< ?php echo URL_JS ?>modals.js"></script> -->
 <?php } ?>

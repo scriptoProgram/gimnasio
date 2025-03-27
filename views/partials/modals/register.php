@@ -30,8 +30,7 @@
                             class="w-32 h-32 border border-gray-300 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
                             <img id="preview-imgF" onclick="document.getElementById('profile-image1').click()"
                                 src="<?php echo URL_IMAGES ?>profile-man.png" class="w-full h-full object-cover"
-                                alt="Previsualización">
-                            <!-- <span id="placeholder-text" class="text-gray-500">Sin imagen</span> -->
+                                alt="Previsualización">                            
                         </div>
                         <input type="file" id="profile-image1" name="profile-image1" accept="image/*" class="hidden">
                         <button type="button" onclick="document.getElementById('profile-image1').click()"
@@ -42,29 +41,20 @@
                     <!-- BAR DEL FORMULARIO -->
                     <div role="tablist" id="tablist"
                         class="h-11 items-center justify-center rounded-md bg-muted p-1 grid grid-cols-3 mb-6 mr-[5px] bg-[#7D7D7D]"> <!-- style="outline:none;" -->
-                        <button type="button" 
-                            class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white active" data-target="personal"
-                            class="justify-center whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        <button type="button" class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white active" data-target="personal">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                             </svg>
                             datos personales
                         </button>
-                        <button type="button" 
-                            class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white" data-target="domicilio">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        <button type="button"  class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white" data-target="domicilio">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
                             domicilio
                         </button>
-                        <button type="button" 
-                            class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white" data-target="documentacion">
+                        <button type="button" class="tab-btn justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background flex items-center gap-2 cursor-pointer text-white" data-target="documentacion">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                             </svg>
@@ -176,35 +166,35 @@
                 </form>
             </div>
             <hr>
-            <div id="modal-footer" class="mx-auto grid grid-rows-1 justify-items-end gap-[1rem] items-center">
-                <button type="button" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#AA1717] rounded-sm text-white font-semibold">cancelar</button>
-                <button type="submit" name="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold">registrar empleado</button>
+            <div id="modal-footer" class="mx-auto flex justify-end gap-[1rem] items-center my-[12px]">
+                <button type="button" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#B7021D] rounded-sm text-white font-semibold hover:bg-[#E00223]">cancelar</button>
+                <button type="submit" name="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
                 <!-- <p>hola</p> -->
             </div>
         </div>
     </div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll(".tab-btn")
-    const contents = document.querySelectorAll(".content")
-    const form =  document.getElementById('form-register')
-    // console.log(contents)
+// document.addEventListener("DOMContentLoaded", function() {
+//     const buttons = document.querySelectorAll(".tab-btn")
+//     const contents = document.querySelectorAll(".content")
+//     const form =  document.getElementById('form-register')
+//     // console.log(contents)
 
-    buttons.forEach(button => {
-        button.addEventListener("click", function() {
-            const target = this.getAttribute("data-target");
+//     buttons.forEach(button => {
+//         button.addEventListener("click", function() {
+//             const target = this.getAttribute("data-target");
 
-            // Oculta todos los contents
-            contents.forEach(content => content.classList.add("hidden"))
+//             // Oculta todos los contents
+//             contents.forEach(content => content.classList.add("hidden"))
 
-            // Muestra el fieldset correspondiente
-            document.getElementById(target).classList.remove("hidden")
+//             // Muestra el content correspondiente
+//             document.getElementById(target).classList.remove("hidden")
 
-            // Marca el botón activo
-            buttons.forEach(btn => btn.classList.remove("active"))
-            this.classList.add("active")
-        });
-    });
-});
+//             // Marca el botón activo
+//             buttons.forEach(btn => btn.classList.remove("active"))
+//             this.classList.add("active")
+//         });
+//     });
+// });
 </script>
