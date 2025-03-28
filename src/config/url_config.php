@@ -1,5 +1,6 @@
 <?php
 define('ROOT', '/gimnasio/');
+// URL
 define('URL_IMAGES', '/gimnasio/public/images/');
 define('URL_ICONS', '/gimnasio/public/icons/');
 define('URL_CSS', '/gimnasio/public/css/');
