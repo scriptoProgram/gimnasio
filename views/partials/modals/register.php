@@ -12,7 +12,7 @@
 
         <!-- Contenedor del Modal -->
         <div id="content-modal"
-            class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] h-[43rem] max-h-[43rem]  text-black">
+            class="modal-container relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-[48rem] sm:w-full p-[1rem] h-[43rem] max-h-[90vh] text-black">
             <div id="modal-header" class="modal-content flex justify-between mb-[1rem]">
                 <h2 class="text-xl font-medium text-gray-900">Registro de empleados</h2>
                 <button id="close-btn" class="text-black cursor-pointer">
@@ -22,7 +22,7 @@
                 </button>
             </div>
             <hr>
-            <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100">
+            <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100 h-[79%]">
                 <form action="#" method="post" id="form-register">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3 mt-[1rem] mb-[1rem]">
@@ -167,7 +167,7 @@
             </div>
             <hr>
             <div id="modal-footer" class="mx-auto flex justify-end gap-[1rem] items-center my-[12px]">
-                <button type="button" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#B7021D] rounded-sm text-white font-semibold hover:bg-[#E00223]">cancelar</button>
+                <button type="button" name="btn-cancel" id="btn-cancel" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#B7021D] rounded-sm text-white font-semibold hover:bg-[#E00223]">cancelar</button>
                 <button type="submit" name="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
                 <!-- <p>hola</p> -->
             </div>

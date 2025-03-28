@@ -17,6 +17,6 @@ require_once __DIR__ . '/../../src/config/url_config.php';
     <?php SiteController::addNavbar(); ?>
     <main class="absolute left-44 pt-[1.5rem] pl-[1.5rem] pb-[1.5rem]">
     </main>
-    <script src="<?php echo URL_JS_MODALS ?>modals.js"></script>
+    <script type="module" src="<?php echo URL_JS ?>main.js"></script>
 </body>
 </html>
