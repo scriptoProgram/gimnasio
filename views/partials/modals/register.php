@@ -23,7 +23,7 @@
             </div>
             <hr>
             <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100 h-[79%]">
-                <form action="./../../" method="post" id="form-register">
+                <form action="<?php echo URL_CONTROLLERS ?>employeeController.php" method="post" id="form-register">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3 mt-[1rem] mb-[1rem]">
                         <div id="image-preview1"
