@@ -23,7 +23,7 @@
             </div>
             <hr>
             <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100 h-[79%]">
-                <form action="#" method="post" id="form-register">
+                <form action="./../../" method="post" id="form-register">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3 mt-[1rem] mb-[1rem]">
                         <div id="image-preview1"
@@ -174,27 +174,3 @@
         </div>
     </div>
 </div>
-<script>
-// document.addEventListener("DOMContentLoaded", function() {
-//     const buttons = document.querySelectorAll(".tab-btn")
-//     const contents = document.querySelectorAll(".content")
-//     const form =  document.getElementById('form-register')
-//     // console.log(contents)
-
-//     buttons.forEach(button => {
-//         button.addEventListener("click", function() {
-//             const target = this.getAttribute("data-target");
-
-//             // Oculta todos los contents
-//             contents.forEach(content => content.classList.add("hidden"))
-
-//             // Muestra el content correspondiente
-//             document.getElementById(target).classList.remove("hidden")
-
-//             // Marca el botón activo
-//             buttons.forEach(btn => btn.classList.remove("active"))
-//             this.classList.add("active")
-//         });
-//     });
-// });
-</script>

@@ -1,4 +1,4 @@
-console.log('modals.js loaded')
+// console.log('modals.js loaded')
 document.addEventListener('DOMContentLoaded', function () {
     const openModalBtn = document.querySelector('.open-modal')
     const modal = document.getElementById(openModalBtn.getAttribute('data-modal'))
