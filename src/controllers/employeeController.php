@@ -1,6 +1,6 @@
 <?php
-require_once './src/config/url_config.php';
-require_once URL_MODELS . 'employeeModel.php';
+require_once './../config/url_config.php';
+require_once './../models/employeeModel.php';
 
 class EmployeeController {
 
@@ -12,8 +12,26 @@ class EmployeeController {
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Personal
             $name = $_POST['name-employee'];
-            echo $name;
+            $email = $_POST['email-employee'];
+            $phone = $_POST['phone-employee'];
+            $typeEmployee = $_POST['type-emlpoyee'];
+            // Domicilio
+            $state = $_POST['state-employee'];
+            $city = $_POST['city-employee'];
+            $cp = $_POST['cp-employee'];
+            $colony = $_POST['colony-employee'];
+            $street = $_POST['street-employee'];
+            $extNumber = $_POST['numExt-employee'];
+            $intNumber = $_POST['numInt-employee'];
+            // Documentación
+            
+            // echo $name;
         }
     }
 }
+
+$prueba = new EmployeeController();
+$prueba->register();
+var_dump($prueba);
