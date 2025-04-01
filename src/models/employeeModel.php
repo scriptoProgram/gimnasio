@@ -2,7 +2,7 @@
 include_once __DIR__ . '/../config/database_auto.php';
 
 class EmployeeModel {
-    function registerEmployee($name, $email, $phone, $type, $state, $city, $cp, $suburb, $street, $numExt, $numInt) {
+    function registerEmployee($name, $email, $phone, $type, $state, $city, $cp, $suburb, $street, $extNumber, $intNumber) {
 
         $comprobated = DB::connectAndPrepare("SELECT * FROM empleado WHERE correo = ?");
         $comprobated->bindParam(1, $email);
@@ -20,8 +20,8 @@ class EmployeeModel {
         // $cp = $cp == '50000' ? '50000' : 'otro cp';
         // $suburb = $suburb == 'Centro' ? 'Centro' : 'otro suburbio';
         // $street = $street == 'Calle 1' ? 'Calle 1' : 'otra calle';
-        // $numExt = $numExt == '1' ? '1' : 'otro numExt';    
-        // $numInt = $numInt == '1' ? '1' : 'otro numInt';
+        // $extNumber = $extNumber == '1' ? '1' : 'otro extNumber';    
+        // $intNumber = $intNumber == '1' ? '1' : 'otro intNumber';
 
         $insert = DB::connectAndPrepare("INSERT INTO empleado (nombre, correo, telefono, f_ingreso, estatus, tipo_empleado, estado, ciudad, codigo_postal, colonia, calle, numext, numint) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $insert->bindParam(1, $name);
@@ -35,8 +35,8 @@ class EmployeeModel {
         $insert->bindParam(9, $cp);
         $insert->bindParam(10, $suburb);
         $insert->bindParam(11, $street);
-        $insert->bindParam(12, $numExt);
-        $insert->bindParam(13, $numInt);
+        $insert->bindParam(12, $extNumber);
+        $insert->bindParam(13, $intNumber);
         
         if ($insert->execute()) {
             return ['succes' => true, 'message' => 'Empleado registrado correctamente.'];

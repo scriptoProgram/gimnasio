@@ -83,8 +83,8 @@
                                 class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
-                            <label for="type-emlpoyee" class="mt-auto mb-auto">Tipo:</label>
-                            <select name="type-emlpoyee" id="type-emlpoyee" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <label for="type-employee" class="mt-auto mb-auto">Tipo:</label>
+                            <select name="type-employee" id="type-employee" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
                                 <option value="" selected disabled>selecciona una opción</option>
                                 <option value="ADMINISTRADOR">administrador</option>
                                 <option value="USUARIO">usuario</option>
