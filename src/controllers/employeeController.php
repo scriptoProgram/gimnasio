@@ -30,7 +30,7 @@ class EmployeeController {
             // Documentación
             
             // echo $name;
-            if (!validateName($name) || !validteEmail($email)) {
+            if (!validateName($name) || !validateEmail($email)) {
                 echo json_encode(["success" => false, 'message' => 'Datos invalidos']);
                 exit();
             }

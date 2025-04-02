@@ -3,7 +3,7 @@ function validateName($name) {
     return !empty(trim($name));
 }
 
-function validteEmail($email) {
+function validateEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
