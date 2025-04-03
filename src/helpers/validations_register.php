@@ -1,22 +1,69 @@
 <?php
+// Datos personales
 function validateName($name) {
-    return !empty(trim($name));
+    return !empty(trim($name)) ? true : "El campo nombre no puede estar vacío.";
+    // $name = trim($name);
+
+    // if (empty($name)) {
+    //     return "El campo Nombre no puede estar vacío.";
+    // }
+
+    // // Contar cuántas palabras hay (al menos 3: nombre + 2 apellidos)
+    // $wordCount = str_word_count($name);
+
+    // if ($wordCount < 3) {
+    //     return "El nombre debe incluir al menos un nombre y dos apellidos.";
+    // }
+
+    // return true;
 }
 
 function validateEmail($email) {
-    return filter_var(!empty($email), FILTER_VALIDATE_EMAIL);
+    if (!empty(trim($email))) return "El campo email no puede estar vacío.";
+    return filter_var($email, FILTER_VALIDATE_EMAIL) ? true : "Correo con formato invalido";
 }
 
 function validatePhone($phone) {
-    return preg_match("/^[0.9]{7-10}$/" ,!empty($phone));
-    // if (!empty($phone)) {
-    // }
+    if (!empty(trim($phone))) return "El campo Teléfono no puede estar vacío.";
+    return preg_match("/^[0-9]{7,10}$/", $phone) ? true : "Teléfono inválido.";
+    // return !empty(trim($phone)) && preg_match("/^[0-9]{7,10}$/", $phone);
 }
 
 function validateType($typeEmployee) {
-    return !empty($typeEmployee);
+    // if (!empty(trim($typeEmployee)))  "Debe asignar un tipo de empleado.";
+    return !empty(trim($typeEmployee)) ? true : "Debe asignar un tipo de empleado.";
 }
 
+// Domicilio
+function validateState($state) {
+    // return !empty(trim($state));
+    return !empty(trim($state)) ? true : "El campo Estado no puede estar vacío.";
+}
+function validateCity($city) {
+    // return !empty(trim($city));
+    return !empty(trim($city)) ? true : "El campo Ciudad no puede quedar vacío.";
+}
+function validateCP($cp) {
+    // return !empty(trim($cp));
+    return !empty(trim($cp)) ? true : "Falta Código Postal.";
+}
+function validateColony($colony) {
+    // return !empty(trim($colony));
+    return !empty(trim($colony)) ? true : "Agrega el Barrio o Colonia del domicilio.";
+}
+function validateStreet($street) {
+    // return !empty(trim($street));
+    return !empty(trim($street)) ? true : "El campo Calle, no puede estar vacío.";
+}
+function validateExtNum($extNumber) {
+    // return !empty(trim($extNumber));
+    return !empty(trim($extNumber)) ? true : "Falta insertar el Numero Exterior del domicilio.";
+}
+function validateIntNum($intNumber) {
+    return !empty(trim($intNumber));
+}
+
+// Documentacion
 function validateFile($file) {
     $fileExtension = ['pdf', 'jpg', 'png'];
     $maxSize = 2 * 1024 * 1024;

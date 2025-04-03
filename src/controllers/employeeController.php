@@ -1,8 +1,4 @@
 <?php
-// require_once './../config/url_config.php';
-
-use function PHPSTORM_META\registerArgumentsSet;
-
 require_once './../helpers/validations_register.php';
 require_once './../models/employeeModel.php';
 
@@ -32,11 +28,12 @@ class EmployeeController {
             $intNumber = $_POST['numInt-employee'];
             // Documentación
             
-            // echo $name;
-            if (!validateName($name) || !validateEmail($email) || !validatePhone($phone) || !validateType($typeEmployee)) {
-                echo json_encode(["success" => false, 'message' => 'Datos invalidos']);
-                exit();
-            }
+            
+            // Primer validación
+            // if (!validateName($name) || !validateEmail($email) || !validatePhone($phone)) {
+            //     echo json_encode(["success" => false, 'message' => 'Datos invalidos']);
+            //     exit();
+            // }
 
             $result = $this->model->registerEmployee($name, $email, $phone, $typeEmployee, $state, $city, $cp, $colony, $street, $extNumber, $intNumber);
             echo json_encode($result);
@@ -45,8 +42,6 @@ class EmployeeController {
         } else {
             echo json_encode(["succsess" => false, 'message' => 'Método inválido del formulario.']);
             exit();
-            // $response = ["error" => "Método invalido del fómulario."];
-            // return $response;
         }
     }
 }
