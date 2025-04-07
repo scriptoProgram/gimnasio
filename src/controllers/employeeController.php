@@ -1,7 +1,7 @@
 <?php
 require_once './../helpers/validations_register.php';
 require_once './../models/employeeModel.php';
-
+// header('Content-Type: application/json; charset=utf-8');
 class EmployeeController {
 
     private $model;
@@ -12,7 +12,7 @@ class EmployeeController {
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            print_r($_POST);
+            // print_r($_POST);
             // Personal
             $name = $_POST['name-employee'];
             $email = $_POST['email-employee'];
@@ -66,6 +66,18 @@ class EmployeeController {
     }
 }
 
-$prueba = new EmployeeController();
-$prueba->register();
-var_dump($prueba);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
+    !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+    strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+
+    $controller = new EmployeeController();
+    $controller->register();
+} else {
+    http_response_code(403);
+    echo 'Acceso denegado';
+}
+
+
+// $prueba = new EmployeeController();
+// $prueba->register();
+// var_dump($prueba);
