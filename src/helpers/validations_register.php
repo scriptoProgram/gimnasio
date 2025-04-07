@@ -1,31 +1,53 @@
 <?php
 // Datos personales
 function validateName($name) {
-    return !empty(trim($name)) ? true : "El campo nombre no puede estar vacío.";
-    // $name = trim($name);
+    $name = trim($name);
 
-    // if (empty($name)) {
-    //     return "El campo Nombre no puede estar vacío.";
-    // }
+    if (empty($name)) {
+        return "El campo Nombre no puede estar vacío.";
+    }
 
-    // // Contar cuántas palabras hay (al menos 3: nombre + 2 apellidos)
-    // $wordCount = str_word_count($name);
+    $length = str_word_count($name);
+    if ($length < 3) {
+        return "El nombre debe incluir al menos un nombre y dos apellidos.";
+    }
 
-    // if ($wordCount < 3) {
-    //     return "El nombre debe incluir al menos un nombre y dos apellidos.";
-    // }
+    return true;
+    // return !empty(trim($name)) ? true : "El campo nombre no puede estar vacío.";
 
-    // return true;
 }
 
 function validateEmail($email) {
-    if (!empty(trim($email))) return "El campo email no puede estar vacío.";
-    return filter_var($email, FILTER_VALIDATE_EMAIL) ? true : "Correo con formato invalido";
+    // if (!empty(trim($email))) return "El campo email no puede estar vacío.";
+    // return filter_var($email, FILTER_VALIDATE_EMAIL) ? true : "Correo con formato invalido";
+    $email = trim($email);
+
+    if (empty($email)) {
+        return "El campo email no puede estar vacío.";
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "El email no es válido.";
+    }
+
+    return true;
 }
 
 function validatePhone($phone) {
-    if (!empty(trim($phone))) return "El campo Teléfono no puede estar vacío.";
-    return preg_match("/^[0-9]{7,10}$/", $phone) ? true : "Teléfono inválido.";
+    $phone = trim($phone);
+
+    if (empty($phone)) {
+        return "El campo Teléfono no puede estar vacío.";
+    }
+
+    if (!preg_match("/^[0-9]{7,10}$/", $phone)) {
+        return "El número de Teléfono no es válido.";
+    }
+
+    return true;
+    // if (!empty(trim($phone))) return "El campo Teléfono no puede estar vacío.";
+    // return preg_match("/^[0-9]{7,10}$/", $phone) ? true : "Teléfono inválido.";
+
     // return !empty(trim($phone)) && preg_match("/^[0-9]{7,10}$/", $phone);
 }
 
@@ -59,9 +81,9 @@ function validateExtNum($extNumber) {
     // return !empty(trim($extNumber));
     return !empty(trim($extNumber)) ? true : "Falta insertar el Numero Exterior del domicilio.";
 }
-function validateIntNum($intNumber) {
-    return !empty(trim($intNumber));
-}
+// function validateIntNum($intNumber) {
+//     return !empty(trim($intNumber));
+// }
 
 // Documentacion
 function validateFile($file) {

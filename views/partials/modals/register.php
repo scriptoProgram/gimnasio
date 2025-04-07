@@ -68,23 +68,23 @@
                             <label for="name-emlpoyee" class="mt-auto mb-auto">Nombre completo:</label>
                             <input type="text" id="name-employee" name="name-employee"
                             placeholder="Ej: Juán Perez Mondragón"
-                            class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="email-emlpoyee" class="mt-auto mb-auto">Correo:</label>
                             <input type="text" id="email-employee" name="email-employee"
                                 placeholder="Ej: juan_perez@gmail.com"
-                                class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                                class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                                 <!-- class="border-solid border-1 border-gray-400 rounded-sm p-[3px] h-[2rem] focus:border-sky-500 focus:outline focus:outline-sky-500"> -->
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="phone-emlpoyee" class="mt-auto mb-auto">Teléfono:</label>
                             <input type="text" id="phone-employee" name="phone-employee" placeholder="Ej: 1234567890"
-                                class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                                class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="type-employee" class="mt-auto mb-auto">Tipo:</label>
-                            <select name="type-employee" id="type-employee" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <select name="type-employee" id="type-employee" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                                 <option value="" selected disabled>selecciona una opción</option>
                                 <option value="ADMINISTRADOR">administrador</option>
                                 <option value="USUARIO">usuario</option>
@@ -95,28 +95,28 @@
                     <div id="domicilio" class="content grid grid-cols-2 gap-[1rem] h-[16.4rem] pt-[8px] pb-[8px] mt-[1rem] mr-[5px] hidden">
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="state-emlpoyee" class="mt-auto mb-auto">Estado:</label>
-                            <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <input type="text" id="state-employee" name="state-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
-                            <label for="city-emlpoyee" class="mt-auto mb-auto">Ciudad:</label>
-                            <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <label for="city-emlpoyee" class="mt-auto mb-auto">Ciudad / Municipio:</label>
+                            <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="cp-emlpoyee" class="mt-auto mb-auto">Código Postal:</label>
-                            <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="colony-emlpoyee" class="mt-auto mb-auto">Colonia:</label>
-                            <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="street-emlpoyee" class="mt-auto mb-auto">Calle:</label>
-                            <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                            <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="grid grid-cols-2 gap-[1rem]">
                             <div class="content-input grid grid-rows-2 space-y-1">
                                 <label for="numExt-emlpoyee" class="mt-auto mb-auto">Num. Ext:</label>
-                                <input type="number" id="numExt-employee" name="numExt-employee" placeholder="Ej: 58" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background">
+                                <input type="number" id="numExt-employee" name="numExt-employee" placeholder="Ej: 58" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                             </div>
                             <div class="content-input grid grid-rows-2 space-y-1">
                                 <label for="numInt-emlpoyee" class="mt-auto mb-auto">Num. Int:</label>
@@ -168,7 +168,7 @@
             <hr>
             <div id="modal-footer" class="mx-auto flex justify-end gap-[1rem] items-center my-[12px]">
                 <button type="button" name="btn-cancel" id="btn-cancel" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#B7021D] rounded-sm text-white font-semibold hover:bg-[#E00223]">cancelar</button>
-                <button type="submit" name="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
+                <button type="submit" name="submit" id="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
                 <!-- <p>hola</p> -->
             </div>
         </div>

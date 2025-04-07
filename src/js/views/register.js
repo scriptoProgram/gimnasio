@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll(".tab-btn")
     const contents = document.querySelectorAll(".content")
+    const form = document.getElementById("form-register")
 
     buttons.forEach(button => {
         button.addEventListener('click', function () {
@@ -14,4 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
     })
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+    })
+
 })

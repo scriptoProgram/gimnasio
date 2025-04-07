@@ -2,7 +2,7 @@
 include_once __DIR__ . '/../config/database_auto.php';
 
 class EmployeeModel {
-    function registerEmployee($name, $email, $phone, $type, $state, $city, $cp, $suburb, $street, $extNumber, $intNumber) {
+    function registerEmployee($name, $email, $phone, $date, $status, $type, $state, $city, $cp, $suburb, $street, $extNumber, $intNumber) {
 
         $comprobated = DB::connectAndPrepare("SELECT * FROM empleado WHERE correo = ?");
         $comprobated->bindParam(1, $email);
@@ -12,37 +12,33 @@ class EmployeeModel {
             return ['succes' => 'error', 'message' => 'El correo ya está registrado.'];
         }
 
-        // $date = date('Y-m-d H:i:s');
-        // $type = $type == 'administrador' ? 'ADMINISTRADOR' : 'usuario';
-        // $status = 'activo';
-        // $state = $state == 'Estado de México' ? 'Estado de México' : 'otro estado';
-        // $city = $city == 'Toluca' ? 'Toluca' : 'otra ciudad';
-        // $cp = $cp == '50000' ? '50000' : 'otro cp';
-        // $suburb = $suburb == 'Centro' ? 'Centro' : 'otro suburbio';
-        // $street = $street == 'Calle 1' ? 'Calle 1' : 'otra calle';
-        // $extNumber = $extNumber == '1' ? '1' : 'otro extNumber';    
-        // $intNumber = $intNumber == '1' ? '1' : 'otro intNumber';
+        $insertHome = DB::connectAndPrepare("INSERT INTO direccion (estado, ciudad, codigo_postal, colonia, calle, numext, numint)  VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $insertHome->bindParam(1, $state);
+        $insertHome->bindParam(2, $city);
+        $insertHome->bindParam(3, $cp);
+        $insertHome->bindParam(4, $suburb);
+        $insertHome->bindParam(5, $street);
+        $insertHome->bindParam(6, $extNumber);
+        $insertHome->bindParam(7, $intNumber);
 
-        $insert = DB::connectAndPrepare("INSERT INTO empleado (nombre, correo, telefono, f_ingreso, estatus, tipo_empleado, estado, ciudad, codigo_postal, colonia, calle, numext, numint) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $insert->bindParam(1, $name);
-        $insert->bindParam(2, $email);
-        $insert->bindParam(3, $phone);
-        $insert->bindParam(4, $date);
-        $insert->bindParam(5, $status);
-        $insert->bindParam(6, $type);
-        $insert->bindParam(7, $state);
-        $insert->bindParam(8, $city);
-        $insert->bindParam(9, $cp);
-        $insert->bindParam(10, $suburb);
-        $insert->bindParam(11, $street);
-        $insert->bindParam(12, $extNumber);
-        $insert->bindParam(13, $intNumber);
-        
-        if ($insert->execute()) {
-            return ['succes' => true, 'message' => 'Empleado registrado correctamente.'];
+        if ($insertHome->execute()) {
+            $insert = DB::connectAndPrepare("INSERT INTO empleado (nombre, correo, telefono, f_ingreso, estatus, tipo_empleado, id_direccion) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $insert->bindParam(1, $name);
+            $insert->bindParam(2, $email);
+            $insert->bindParam(3, $phone);
+            $insert->bindParam(4, $date);
+            $insert->bindParam(5, $status);
+            $insert->bindParam(6, $type);
+            $insert->bindParam(7, $idHome);
+            
+            if ($insert->execute()) {
+                return ['succes' => true, 'message' => 'Empleado registrado correctamente.'];
+            }
+        } else {
+            return ['succes' => false, 'message' => 'Error al registrar la dirección.'];
         }
         return ['succes' => false, 'message' => 'Error al registrar el empleado.'];
-        // die();
+        die();
     }
 }
 // $prueba = new EmployeeModel();

@@ -18,6 +18,8 @@ class EmployeeController {
             $email = $_POST['email-employee'];
             $phone = $_POST['phone-employee'];
             $typeEmployee = $_POST['type-employee'] ?? '';
+            $dateRegister = date('Y-m-d H:i:s');
+            $status = 'activo';
             // Domicilio
             $state = $_POST['state-employee'];
             $city = $_POST['city-employee'];
@@ -27,15 +29,33 @@ class EmployeeController {
             $extNumber = $_POST['numExt-employee'];
             $intNumber = $_POST['numInt-employee'];
             // Documentación
-            
-            
-            // Primer validación
-            // if (!validateName($name) || !validateEmail($email) || !validatePhone($phone)) {
-            //     echo json_encode(["success" => false, 'message' => 'Datos invalidos']);
-            //     exit();
-            // }
 
-            $result = $this->model->registerEmployee($name, $email, $phone, $typeEmployee, $state, $city, $cp, $colony, $street, $extNumber, $intNumber);
+            // Validaciones
+            $errors = [];
+            
+            foreach ([
+                'name' => validateName($name),
+                'email' => validateEmail($email),
+                'phone' => validatePhone($phone),
+                'typeEmployee' => validateType($typeEmployee),
+                'state' => validateState($state),
+                'city' => validateCity($city),
+                'cp' => validateCP($cp),
+                'colony' => validateColony($colony),
+                'street' => validateStreet($street),
+                'extNumber' => validateExtNum($extNumber)
+            ] as $field => $validation) {
+                if ($validation !== true) {
+                    $errors[] = $validation;
+                }
+            }
+
+            if (!empty($errors)) {
+                echo json_encode(["success" => false, 'errors' => $errors]);
+                exit();
+            }
+
+            $result = $this->model->registerEmployee($name, $email, $phone, $dateRegister, $status, $typeEmployee, $state, $city, $cp, $colony, $street, $extNumber, $intNumber);
             echo json_encode($result);
             exit();
 
