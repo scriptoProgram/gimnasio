@@ -30,29 +30,37 @@ document.addEventListener('DOMContentLoaded', function () {
         // Envío de datos con fetch
         fetch('../src/controllers/employeeController.php', {
             method: 'POST',
-            // headers: {
-            //     'X-Requested-With': 'XMLHttpRequest'
-            // },
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
             body: formData,
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al procesar la solicitud');
+            .then(async response => {
+                const text = await response.text()
+                console.log(text)
+
+                try {
+                    return JSON.parse(text)
+                } catch (e) {
+                    throw new Error("❌ Respuesta no es JSON válido. Mira en consola.")
+                // if (!response.ok) {
+                //     throw new Error('Error al procesar la solicitud');
+                // }
+                // return response.json();
                 }
-                return response.json();
             })
             .then(data => {
-                submitButton.disabled = false; // Habilitar el botón de nuevo
-                if (data.success === false && data.errors) {
-                    console.group("Errors");
-                    data.errors.forEach((error, i) => {
-                        console.warn(`Error ${i + 1}: ${error}`);
-                    });
-                    console.groupEnd();
-                } else {
-                    console.log("✅ Registro exitoso:", data);
-                    alert("¡Registro exitoso!");
-                }
+                // submitButton.disabled = false; // Habilitar el botón de nuevo
+                // if (data.success === false && data.errors) {
+                //     console.group("Errors");
+                //     data.errors.forEach((error, i) => {
+                //         console.warn(`Error ${i + 1}: ${error}`);
+                //     });
+                //     console.groupEnd();
+                // } else {
+                //     console.log("✅ Registro exitoso:", data);
+                //     alert("¡Registro exitoso!");
+                // }
             })
             .catch(error => {
                 // submitButton.disabled = false; // Habilitar el botón en caso de error

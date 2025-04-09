@@ -1,7 +1,7 @@
 <?php
 require_once './../helpers/validations_register.php';
 require_once './../models/employeeModel.php';
-// header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 class EmployeeController {
 
     private $model;
@@ -65,6 +65,8 @@ class EmployeeController {
         }
     }
 }
+$controller = new EmployeeController();
+$controller->register();
 
 // if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
 //     $controller = new EmployeeController();

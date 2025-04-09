@@ -22,6 +22,7 @@ class EmployeeModel {
         $insertHome->bindParam(7, $intNumber);
 
         if ($insertHome->execute()) {
+            
             $insert = DB::connectAndPrepare("INSERT INTO empleado (nombre, correo, telefono, f_ingreso, estatus, tipo_empleado, id_direccion) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $insert->bindParam(1, $name);
             $insert->bindParam(2, $email);
