@@ -1,4 +1,6 @@
-
+<!-- < ?php
+    require_once '../../../src/config/url_config.php';
+?> -->
 <script src='https://unpkg.com/@tailwindcss/browser@4'></script>
 <link rel="stylesheet" href="<?php echo URL_CSS ?>employee/register.css">
 
@@ -23,7 +25,7 @@
             </div>
             <hr>
             <div id="modal-body" class="mt-[1rem] mb-[1rem] overflow-y-auto relative z-100 h-[79%]">
-                <form action="<?php echo URL_CONTROLLERS ?>employeeController.php" method="post" id="form-register">
+                <form action="<?php echo URL_CONTROLLERS ?>employeeController.php" method="POST" id="form-register">
                     <!-- Foto de perfil -->
                     <div class="flex flex-col items-center space-y-3 mt-[1rem] mb-[1rem]">
                         <div id="image-preview1"
@@ -66,9 +68,7 @@
                     <div id="personal" class="content grid grid-cols-2 gap-[1rem] h-[15.4rem] pt-[8px] pb-[8px] mt-[1rem] mb-[1rem]">
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="name-emlpoyee" class="mt-auto mb-auto">Nombre completo:</label>
-                            <input type="text" id="name-employee" name="name-employee"
-                            placeholder="Ej: Juán Perez Mondragón"
-                            class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
+                            <input type="text" id="name-employee" name="name-employee" placeholder="Ej: Juán Perez Mondragón" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required >
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="email-emlpoyee" class="mt-auto mb-auto">Correo:</label>
@@ -99,19 +99,19 @@
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="city-emlpoyee" class="mt-auto mb-auto">Ciudad / Municipio:</label>
-                            <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
+                            <input type="text" id="city-employee" name="city-employee" placeholder="Ej: Toluca de Lerdo" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="cp-emlpoyee" class="mt-auto mb-auto">Código Postal:</label>
-                            <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: Estado de México" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
+                            <input type="text" id="cp-employee" name="cp-employee" placeholder="Ej: 50000" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
-                            <label for="colony-emlpoyee" class="mt-auto mb-auto">Colonia:</label>
-                            <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: La Merced" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
+                            <label for="colony-emlpoyee" class="mt-auto mb-auto">Barrio / Colonia:</label>
+                            <input type="text" id="colony-employee" name="colony-employee" placeholder="Ej: Centro" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="content-input grid grid-rows-2 space-y-1">
                             <label for="street-emlpoyee" class="mt-auto mb-auto">Calle:</label>
-                            <input type="text" id="street-employee" name="street-employee" placeholder="Ej: AV. JOSÉ MARÍA MORELOS" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
+                            <input type="text" id="street-employee" name="street-employee" placeholder="Ej: Av. Morelos" class="h-10 w-full rounded-md border border-gray-400 px-3 py-2 text-sm ring-offset-background" required>
                         </div>
                         <div class="grid grid-cols-2 gap-[1rem]">
                             <div class="content-input grid grid-rows-2 space-y-1">
@@ -163,13 +163,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <button type="submit" id="btnPrueba">btn</button> -->
                 </form>
             </div>
             <hr>
             <div id="modal-footer" class="mx-auto flex justify-end gap-[1rem] items-center my-[12px]">
                 <button type="button" name="btn-cancel" id="btn-cancel" data-bs-dismiss="modal" class="btn w-auto px-[1rem] py-[.5rem] bg-[#B7021D] rounded-sm text-white font-semibold hover:bg-[#E00223]">cancelar</button>
-                <button type="submit" name="submit" id="submit" onclick="document.getElementById('form-register').submit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
-                <!-- <p>hola</p> -->
+                <button type="submit" name="submit" id="submit" onclick="document.getElementById('form-register').requestSubmit()" class="btn w-auto px-[1rem] py-[.5rem] bg-[#16BF0A] rounded-sm text-white font-semibold hover:bg-[#1AE20B]">registrar empleado</button>
             </div>
         </div>
     </div>

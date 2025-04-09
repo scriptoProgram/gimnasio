@@ -26,15 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const formData = new FormData(this);
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.disabled = true; // Deshabilitar el botón mientras se procesa
 
         // Envío de datos con fetch
-        fetch('../../src/controllers/employeeController.php', {
+        fetch('../src/controllers/employeeController.php', {
             method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest' // Esta línea es clave
-            },
+            // headers: {
+            //     'X-Requested-With': 'XMLHttpRequest'
+            // },
             body: formData,
         })
             .then(response => {
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => {
-                submitButton.disabled = false; // Habilitar el botón en caso de error
+                // submitButton.disabled = false; // Habilitar el botón en caso de error
                 console.error('Error:', error);
                 alert("Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde.");
             });

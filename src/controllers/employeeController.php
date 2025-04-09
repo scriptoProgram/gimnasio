@@ -66,16 +66,13 @@ class EmployeeController {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
-    !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
-    strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
-
-    $controller = new EmployeeController();
-    $controller->register();
-} else {
-    http_response_code(403);
-    echo 'Acceso denegado';
-}
+// if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+//     $controller = new EmployeeController();
+//     $controller->register();
+// } else {
+//     http_response_code(403);
+//     echo 'Acceso denegado';
+// }
 
 
 // $prueba = new EmployeeController();
